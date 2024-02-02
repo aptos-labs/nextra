@@ -1,6 +1,6 @@
 import path from 'node:path'
 import nextra from 'nextra'
-import { macros } from '@aptos-labs/nextra-theme-docs'
+import { macros } from '@aptos-labs/aptos-docs-config'
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',

@@ -1,5 +1,6 @@
 export default {
-  index: 'Get Started',
+  index: 'Welcome',
+  setup: 'Setup',
   components: "Components",
   "docs-theme": "Docs Theme",
   "blog-theme": "Blog theme",

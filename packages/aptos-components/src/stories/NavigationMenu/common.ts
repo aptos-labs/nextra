@@ -1,4 +1,30 @@
-import type { NavigationMenuType } from './NavigationMenu'
+export interface NavigationMenuItemType {
+  title: string
+  subtitle: string
+  link: string
+  iconUrl?: string
+  iconSvg?: React.ReactElement
+}
+
+export interface NavigationMenuSectionType {
+  title: string
+  items: NavigationMenuItemType[]
+}
+
+export interface NavigationMenuType {
+  sections: NavigationMenuSectionType[]
+}
+
+export enum NavigationHeaderCategories {
+  DEVELOPERS = 'developers',
+  PRODUCTS = 'products',
+  NETWORK = 'network'
+}
+
+export type NavigationHeaderType = Record<
+  NavigationHeaderCategories,
+  NavigationMenuType
+>
 
 export const metadata: NavigationMenuType = {
   sections: [
