@@ -1,10 +1,18 @@
 import path from 'node:path'
 import nextra from 'nextra'
+import { macros } from '@aptos-labs/nextra-theme-docs'
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
-  latex: true,
+  latex: {
+    renderer: 'katex',
+    options: {
+      macros: {
+        ...macros
+      }
+    }
+  },
   search: {
     codeblocks: false
   },

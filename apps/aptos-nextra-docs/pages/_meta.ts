@@ -1,4 +1,4 @@
-export default {
+const meta = {
   index: {
     type: 'page',
     title: 'Nextra',
@@ -11,21 +11,6 @@ export default {
     type: 'page',
     title: 'Documentation'
   },
-  showcase: {
-    type: 'page',
-    title: 'Showcase',
-    theme: {
-      typesetting: 'article',
-      layout: 'full'
-    }
-  },
-  about: {
-    type: 'page',
-    title: 'About',
-    theme: {
-      typesetting: 'article'
-    }
-  },
   '404': {
     type: 'page',
     theme: {
@@ -34,3 +19,5 @@ export default {
     }
   }
 }
+
+export default meta;

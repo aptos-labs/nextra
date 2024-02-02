@@ -99,3 +99,4 @@ export {
   ThemeSwitch,
   LocaleSwitch
 } from './components'
+export { macros } from './katex-macros';

@@ -1,0 +1,49 @@
+{
+  "name": "@aptos-labs/nextra-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm storybook",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "prettier --write src && eslint --cache ./src --fix",
+    "preview": "vite preview",
+    "prepare": "panda codegen",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^2.0.1",
+    "@codesandbox/sandpack-react": "^2.11.3",
+    "@excalidraw/excalidraw": "^0.17.2",
+    "@fontsource/open-sans": "^5.0.22",
+    "clsx": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-tweet": "^3.2.0"
+  },
+  "devDependencies": {
+    "@aptos-labs/fe-eslint-config": "workspace:*",
+    "@pandacss/dev": "0.29.1",
+    "@storybook/addon-essentials": "^7.5.1",
+    "@storybook/addon-interactions": "^7.5.1",
+    "@storybook/addon-links": "^7.5.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.1",
+    "@storybook/react": "^7.5.1",
+    "@storybook/react-vite": "^7.5.1",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "8.33.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.5.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.5"
+  }
+}
