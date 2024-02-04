@@ -22,6 +22,7 @@ export const REHYPE_ICON_DEFAULT_REPLACES: Record<string, string> = {
   python: 'PythonIcon',
   py: 'PythonIcon',
   rust: 'RustIcon',
+  move: 'MoveIcon',
   rs: 'RustIcon'
 }
 
