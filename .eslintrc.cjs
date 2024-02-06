@@ -71,7 +71,7 @@ module.exports = {
     },
     // Rules for React files
     {
-      files: '{packages,examples,docs}/**',
+      files: '{packages,examples,docs,apps}/**',
       extends: [
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
@@ -121,6 +121,7 @@ module.exports = {
         project: [
           'examples/*/tsconfig.json',
           'packages/*/tsconfig.json',
+          'apps/*/tsconfig.json',
           'docs/tsconfig.json',
           'tsconfig.eslint.json'
         ]

@@ -41,5 +41,9 @@ export default withNextra({
     })
     return config
   },
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en'
+  // },
   runtime: 'edge', // for Edge API Routes only
 })

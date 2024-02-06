@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aptos-labs/aptos-docs-config": "workspace:*",
+    "nextra-theme-docs": "workspace:*",
     "@vercel/og": "^0.6.2",
     "clsx": "^2.0.0",
     "framer-motion": "^10.0.0",
