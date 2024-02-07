@@ -36,23 +36,6 @@ export default {
       }
     }
   },
-  examples: {
-    type: 'page',
-    title: 'Examples',
-    theme: {
-      layout: 'full'
-    }
-  },
-  blog: {
-    type: 'page',
-    title: 'Blog',
-    theme: {
-      sidebar: false,
-      toc: true,
-      breadcrumb: false,
-      typesetting: 'article'
-    }
-  },
   nextra_link: {
     type: 'page',
     title: 'Nextra ↗',
