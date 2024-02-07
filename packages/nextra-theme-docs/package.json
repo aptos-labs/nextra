@@ -36,6 +36,7 @@
     "react-dom": ">=16.13.1"
   },
   "dependencies": {
+    "@aptos-labs/nextra-components": "workspace:*",
     "@headlessui/react": "^1.7.17",
     "@popperjs/core": "^2.11.8",
     "clsx": "^2.0.0",
