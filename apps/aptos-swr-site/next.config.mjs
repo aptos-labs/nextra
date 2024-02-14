@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import bundleAnalyzer from '@next/bundle-analyzer'
 import nextra from 'nextra'
-import { i18nConfig } from './i18n.js';
+import { i18nConfig } from './docs.config.js';
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',

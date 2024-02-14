@@ -1,5 +1,6 @@
 /* eslint-env node */
 import { ImageResponse } from '@vercel/og'
+import { title as docsTitle } from '@docs-config';
 
 export const config = {
   runtime: 'edge'
@@ -18,7 +19,7 @@ export default async function (req) {
   const hasTitle = searchParams.has('title')
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'Nextra Documentation'
+    : 'Aptos Documentation'
 
   return new ImageResponse(
     (
@@ -67,7 +68,7 @@ export default async function (req) {
             letterSpacing: -1
           }}
         >
-          Create beautiful websites with Next.js & MDX.
+          {docsTitle} Docs
         </p>
         <h1
           style={{
@@ -78,7 +79,6 @@ export default async function (req) {
             letterSpacing: -4,
             backgroundImage: 'linear-gradient(90deg, #fff 40%, #aaa)',
             backgroundClip: 'text',
-            '-webkit-background-clip': 'text',
             color: 'transparent'
           }}
         >

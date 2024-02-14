@@ -20,7 +20,8 @@
 //   }
 // }
 
-
+// Unfortunately making this a .ts file is not easily doable atm
+// TODO: revisit this if time allows
 export const i18nConfig = Object.freeze({
   en: {
     locale: 'en',
@@ -50,3 +51,12 @@ export const i18nConfig = Object.freeze({
     footerLinkElement: undefined,
   }
 })
+
+
+/**
+ * These variables are used for things like 
+ * - og.tsx
+ */
+
+// Docs Title
+export const title = 'SDK Docs'
