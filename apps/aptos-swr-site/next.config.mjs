@@ -7,19 +7,6 @@ const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
   defaultShowCopyCode: true,
-  // transformPageMap(pageMap, _locale) {
-  //   // if (locale === 'en') {
-  //   //   pageMap = [
-  //   //     ...pageMap,
-  //   //     {
-  //   //       name: 'virtual-page',
-  //   //       route: '/en/virtual-page',
-  //   //       frontMatter: { sidebarTitle: 'Virtual Page' }
-  //   //     }
-  //   //   ]
-  //   // }
-  //   return pageMap
-  // },
   latex: true
 })
 
@@ -43,16 +30,6 @@ export default withBundleAnalyzer(
     distDir: './.next', // Nextra supports custom `nextConfig.distDir`
     redirects: async () => [
       {
-        source: '/change-log',
-        destination: '/docs/change-log',
-        statusCode: 301
-      },
-      {
-        source: '/blog/swr-1',
-        destination: '/blog/swr-v1',
-        statusCode: 301
-      },
-      {
         source: '/docs.([a-zA-Z-]+)',
         destination: '/docs/getting-started',
         statusCode: 302
@@ -60,11 +37,6 @@ export default withBundleAnalyzer(
       {
         source: '/docs',
         destination: '/docs/getting-started',
-        statusCode: 302
-      },
-      {
-        source: '/examples',
-        destination: '/examples/basic',
         statusCode: 302
       },
       {
