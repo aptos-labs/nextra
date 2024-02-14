@@ -1,24 +1,25 @@
 /* eslint-disable no-undef */
 import bundleAnalyzer from '@next/bundle-analyzer'
 import nextra from 'nextra'
+import { i18nConfig } from './i18n.js';
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
   defaultShowCopyCode: true,
-  transformPageMap(pageMap, locale) {
-    if (locale === 'en') {
-      pageMap = [
-        ...pageMap,
-        {
-          name: 'virtual-page',
-          route: '/en/virtual-page',
-          frontMatter: { sidebarTitle: 'Virtual Page' }
-        }
-      ]
-    }
-    return pageMap
-  },
+  // transformPageMap(pageMap, _locale) {
+  //   // if (locale === 'en') {
+  //   //   pageMap = [
+  //   //     ...pageMap,
+  //   //     {
+  //   //       name: 'virtual-page',
+  //   //       route: '/en/virtual-page',
+  //   //       frontMatter: { sidebarTitle: 'Virtual Page' }
+  //   //     }
+  //   //   ]
+  //   // }
+  //   return pageMap
+  // },
   latex: true
 })
 
@@ -36,11 +37,11 @@ export default withBundleAnalyzer(
       ignoreDuringBuilds: true
     },
     i18n: {
-      locales: ['en', 'es', 'ru'],
+      locales: Object.keys(i18nConfig).map((locale) => locale),
       defaultLocale: 'en'
-    }, // basePath: "/some-base-path",
+    },
     distDir: './.next', // Nextra supports custom `nextConfig.distDir`
-    redirects: () => [
+    redirects: async () => [
       {
         source: '/change-log',
         destination: '/docs/change-log',

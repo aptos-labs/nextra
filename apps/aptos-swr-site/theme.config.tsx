@@ -1,9 +1,9 @@
 /* eslint sort-keys: error */
-import { i18nConfig } from 'i18n'
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 import { LocaleSwitch, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'nextra/hooks'
 import type { ComponentProps, ReactElement } from 'react'
+import { i18nConfig } from './i18n'
 
 export const SWRLogo = (props: ComponentProps<'svg'>): ReactElement => (
   <svg viewBox="0 0 291 69" fill="none" {...props}>
@@ -13,6 +13,14 @@ export const SWRLogo = (props: ComponentProps<'svg'>): ReactElement => (
     />
   </svg>
 )
+
+const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }]) => {
+  return {
+    direction: (direction as 'ltr' | 'rtl' | undefined) || undefined,
+    locale,
+    name,
+  }
+})
 
 const config: DocsThemeConfig = {
   banner: {
@@ -105,11 +113,7 @@ const config: DocsThemeConfig = {
       </>
     )
   },
-  i18n: [
-    { locale: 'en', name: 'English' },
-    { direction: 'rtl', locale: 'es', name: 'Español RTL' },
-    { locale: 'ru', name: 'Русский' }
-  ],
+  i18n: i18nLocales,
   logo: function Logo() {
     const { locale } = useRouter()
     return (
@@ -139,10 +143,6 @@ const config: DocsThemeConfig = {
     toggleButton: true
   },
   toc: {
-    extraContent: (
-      // eslint-disable-next-line @next/next/no-img-element -- ignore since url is external and dynamic
-      <img alt="placeholder cat" src="https://placekitten.com/g/300/200" />
-    ),
     float: true
   }
 }

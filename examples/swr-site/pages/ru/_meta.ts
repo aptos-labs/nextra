@@ -12,15 +12,4 @@ export default {
     title: 'Примеры',
     type: 'page'
   },
-  blog: {
-    title: 'Блог',
-    type: 'page',
-    theme: {
-      timestamp: true,
-      sidebar: false,
-      toc: true,
-      breadcrumb: false,
-      typesetting: 'article'
-    }
-  }
 }
