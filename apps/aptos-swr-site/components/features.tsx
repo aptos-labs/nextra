@@ -9,33 +9,42 @@ const Feature = ({ text, icon }) => (
 )
 
 const TITLE_WITH_TRANSLATIONS = {
-  en: 'React Hooks for Data Fetching',
-  es: 'Biblioteca React Hooks para la obtención de datos',
-  ru: 'React хуки для выборки данных'
+  en: 'Blockchain docs have never been this easy',
+  es: 'Los documentos de blockchain nunca han sido tan fáciles.',
+  ru: 'Документация по блокчейну никогда не была такой простой'
 }
 
 // Translations for Features
 const FEATURES_WITH_TRANSLATIONS = {
   en: {
     lightweight: 'Lightweight',
-    realtime: 'Realtime',
-    suspense: 'Suspense',
+    darkMode: 'Dark Mode',
+    latex: 'LaTeX',
     pagination: 'Pagination',
-    backendAgnostic: 'Backend Agnostic',
+    i18n: 'i18n',
     renderingStrategies: 'SSR / SSG Ready',
     typescript: 'TypeScript Ready',
-    remoteLocal: 'Remote + Local'
+    mermaid: 'Mermaid'
   },
-  es: {},
+  es: {
+    lightweight: 'Ligero',
+    darkMode: 'Modo Oscuro',
+    latex: 'LaTeX',
+    pagination: 'Paginación',
+    i18n: 'i18n',
+    renderingStrategies: 'Preparado para SSR / SSG',
+    typescript: 'Listo para TypeScript',
+    mermaid: 'Mermaid'
+  },
   ru: {
     lightweight: 'Лёгкий',
-    realtime: 'В реальном времени',
-    suspense: 'Задержка',
+    darkMode: 'Тёмный режим',
+    latex: 'LaTeX',
     pagination: 'Пагинация',
-    backendAgnostic: 'Бэкэнд-независимый',
-    renderingStrategies: 'SSR / SSG',
-    typescript: 'TypeScript',
-    remoteLocal: 'Удалённо + Локально'
+    i18n: 'i18n',
+    renderingStrategies: 'Готово к SSR / SSG',
+    typescript: 'Поддержка TypeScript',
+    mermaid: 'Mermaid'
   }
 }
 
@@ -48,9 +57,11 @@ export default function Features() {
 
   return (
     <div className="mx-auto mb-10 w-[880px] max-w-full px-4 text-center">
+      <br />
       <p className="mb-2 text-lg text-gray-600 md:!text-2xl">
         {TITLE_WITH_TRANSLATIONS[locale!]}
       </p>
+      <br />
       <div className={styles.features}>
         <Feature
           text={featureText('lightweight')}
@@ -72,7 +83,7 @@ export default function Features() {
           }
         />
         <Feature
-          text={featureText('realtime')}
+          text={featureText('darkMode')}
           icon={
             <svg
               width="24"
@@ -90,7 +101,7 @@ export default function Features() {
           }
         />
         <Feature
-          text={featureText('suspense')}
+          text={featureText('latex')}
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -128,26 +139,19 @@ export default function Features() {
           }
         />
         <Feature
-          text={featureText('backendAgnostic')}
+          text={featureText('i18n')}
           icon={
             <svg
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
               stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-              shapeRendering="geometricPrecision"
+              fill="currentColor"
+              strokeWidth="0"
+              viewBox="0 0 1.92 1.92"
+              height="24px"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25" />
-              <path d="M8 16h.01" />
-              <path d="M8 20h.01" />
-              <path d="M12 18h.01" />
-              <path d="M12 22h.01" />
-              <path d="M16 16h.01" />
-              <path d="M16 20h.01" />
+              <path d="M0.545 0.806 0.493 0.96H0.36l0.223 -0.6h0.154L0.96 0.96H0.82l-0.052 -0.154H0.545zm0.196 -0.088L0.66 0.475h-0.006l-0.081 0.243H0.742z" />
+              <path d="M0 0.24a0.24 0.24 0 0 1 0.24 -0.24h0.84a0.24 0.24 0 0 1 0.24 0.24v0.36h0.36a0.24 0.24 0 0 1 0.24 0.24v0.84a0.24 0.24 0 0 1 -0.24 0.24H0.84a0.24 0.24 0 0 1 -0.24 -0.24v-0.36H0.24a0.24 0.24 0 0 1 -0.24 -0.24V0.24zm0.24 -0.12a0.12 0.12 0 0 0 -0.12 0.12v0.84a0.12 0.12 0 0 0 0.12 0.12h0.84a0.12 0.12 0 0 0 0.12 -0.12V0.24a0.12 0.12 0 0 0 -0.12 -0.12H0.24zm0.857 1.199c0.023 0.036 0.048 0.07 0.076 0.102 -0.09 0.069 -0.201 0.12 -0.332 0.155 0.021 0.026 0.054 0.076 0.067 0.104 0.135 -0.043 0.25 -0.101 0.346 -0.179 0.093 0.08 0.209 0.14 0.352 0.177 0.016 -0.03 0.05 -0.081 0.075 -0.107 -0.135 -0.03 -0.247 -0.083 -0.338 -0.154 0.082 -0.09 0.147 -0.198 0.195 -0.331H1.68V0.96h-0.36v0.126h0.092c-0.038 0.101 -0.089 0.186 -0.153 0.256a0.728 0.728 0 0 1 -0.05 -0.059 0.239 0.239 0 0 1 -0.113 0.037z" />
             </svg>
           }
         />
@@ -189,21 +193,17 @@ export default function Features() {
           }
         />
         <Feature
-          text={featureText('remoteLocal')}
+          text={featureText('mermaid')}
           icon={
             <svg
               width="24"
               height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              shapeRendering="geometricPrecision"
-              viewBox="0 0 24 24"
+              viewBox="19.808034896850586 26.64682388305664 78.02238464355469 64.34417724609375"
+              version="1.1"
+              xmlSpace="preserve"
+              fill="currentColor"
             >
-              <circle cx="12" cy="12" r="2" />
-              <path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14" />
+              <path d="M97.795 26.683c-17.254 -0.738 -33.098 9.878 -38.976 26.117 -5.878 -16.239 -21.722 -26.855 -38.976 -26.117 -0.575 13.692 5.975 26.748 17.294 34.474 5.8 3.984 9.266 10.591 9.247 17.628v12.206H71.256v-12.206c-0.02 -7.036 3.445 -13.644 9.245 -17.628 11.322 -7.722 17.873 -20.781 17.294 -34.474Z" />
             </svg>
           }
         />

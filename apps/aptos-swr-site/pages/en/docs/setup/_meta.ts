@@ -1,4 +1,5 @@
 export default {
-  'get-started': 'Get started',
-  'maintenance': "Maintenance",
+  'organize-files': 'Organize Files',
+  'organize-files-advanced': 'Organize Files (Advanced)',
+  'maintenance': 'Maintenance',
 }

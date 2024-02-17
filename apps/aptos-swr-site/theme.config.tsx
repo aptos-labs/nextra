@@ -13,16 +13,9 @@ const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }
 })
 
 const config: DocsThemeConfig = {
-  banner: {
-    content: 'SWR 2.0 is out! Read more →',
-    key: 'swr-2'
-  },
-  // chat: {
-  //   link: 'https://discord.com'
-  // },
   darkMode: true,
   docsRepositoryBase:
-    'https://github.com/shuding/nextra/blob/core/examples/swr-site',
+    'https://github.com/aptos-labs/nextra/apps/aptos-swr-site',
   editLink: {
     content: function useText() {
       const { locale } = useRouter()
@@ -99,7 +92,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
         <meta property="og:image" content={image} />
-        <meta name="apple-mobile-web-app-title" content="SWR" />
+        <meta name="apple-mobile-web-app-title" content="Aptos Docs" />
       </>
     )
   },
@@ -124,7 +117,7 @@ const config: DocsThemeConfig = {
     defaultTheme: 'dark'
   },
   project: {
-    link: 'https://github.com/vercel/swr'
+    link: 'https://github.com/aptos-labs/nextra'
   },
   sidebar: {
     autoCollapse: true,

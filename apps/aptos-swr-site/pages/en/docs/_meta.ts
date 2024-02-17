@@ -1,5 +1,5 @@
 export default {
-  index: 'Welcome',
+  index: 'Quickstart',
   setup: 'Setup',
   components: 'Components',
   examples: 'Examples',
