@@ -30,13 +30,8 @@ export default withBundleAnalyzer(
     distDir: './.next', // Nextra supports custom `nextConfig.distDir`
     redirects: async () => [
       {
-        source: '/docs.([a-zA-Z-]+)',
-        destination: '/docs/getting-started',
-        statusCode: 302
-      },
-      {
         source: '/docs',
-        destination: '/docs/getting-started',
+        destination: '/en/docs',
         statusCode: 302
       },
       {
