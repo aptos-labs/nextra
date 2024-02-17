@@ -1,6 +1,6 @@
 /* eslint sort-keys: error */
 import type { DocsThemeConfig } from 'nextra-theme-docs'
-import { LocaleSwitch, useConfig } from 'nextra-theme-docs'
+import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'nextra/hooks'
 import { i18nConfig } from '@docs-config'
 
@@ -102,7 +102,7 @@ const config: DocsThemeConfig = {
     return (
       <>
         <span
-          className="max-md:hidden select-none font-extrabold ltr:ml-2 rtl:mr-2"
+          className="select-none font-extrabold ltr:ml-2 rtl:mr-2"
           title={`Aptos Docs: ${i18nConfig[locale!].title || ''}`}
         >
           Aptos Docs
@@ -110,11 +110,8 @@ const config: DocsThemeConfig = {
       </>
     )
   },
-  navbar: {
-    extraContent: LocaleSwitch
-  },
   nextThemes: {
-    defaultTheme: 'dark'
+    defaultTheme: 'light'
   },
   project: {
     link: 'https://github.com/aptos-labs/nextra'

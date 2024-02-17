@@ -1,5 +1,4 @@
-import { buildDynamicMDX } from 'nextra/remote'
-import { Callout, RemoteContent as MathJaxExample, MathJax, MathJaxContext } from 'nextra/components'
+import { Callout, MathJax, MathJaxContext } from 'nextra/components'
 
 # LaTeX
 
@@ -83,7 +82,7 @@ const withNextra = nextra({
 
 See [KaTeX’s documentation](https://katex.org/docs/supported) for a list of supported commands.
 
-### MathJax
+{/* ### MathJax
 
 When MathJax is enabled (by setting `latex: { renderer: 'mathjax' }{:js}`) math is rendered on page load via
 [`better-react-mathjax`](https://github.com/fast-reflexes/better-react-mathjax) instead of being pre-rendered.
@@ -173,4 +172,4 @@ export async function getStaticProps() {
   )
   props.__nextra_dynamic_opts.title = 'LaTeX'
   return { props }
-}
+} */}

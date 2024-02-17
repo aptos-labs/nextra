@@ -6,7 +6,7 @@ Nextra uses [Shiki](https://shiki.matsu.io) to do syntax highlighting at build
 time. It's very reliable and performant. For example, adding this in your
 Markdown file:
 
-````move filename="example.move"
+````mdx filename="Markdown"
 ```move filename="example.move"
 module 0xCAFE::BasicCoin {
      // Only included in compilation for testing. Similar to #[cfg(testing)]
@@ -75,7 +75,7 @@ module 0xCAFE::BasicCoin {
 Inlined syntax highlighting like `let x = 1{:jsx}` is also supported via the
 `{:}` syntax:
 
-```md copy=false filename="Markdown"
+```mdx copy=false filename="Markdown"
 Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
 ```
 
@@ -84,7 +84,7 @@ Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
 You can highlight specific lines of code by adding a `{}` attribute to the code
 block:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```js {1,4-5}
 import { useState } from 'react'
 
@@ -111,7 +111,7 @@ function Counter() {
 You can highlight specific substrings of code by adding a `//` attribute to the
 code block:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```js /useState/
 import { useState } from 'react'
 
@@ -139,7 +139,7 @@ number it: `/str/1`, or multiple: `/str/1-3`, `/str/1,3`.
 By adding a `copy` attribute, a copy button will be added to the code block when
 the user hovers over it:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```js copy
 console.log('hello, world')
 ```
@@ -162,7 +162,7 @@ console.log('hello, world')
 You can add line numbers to your code blocks by adding a `showLineNumbers`
 attribute:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```js showLineNumbers
 import { useState } from 'react'
 
@@ -189,7 +189,7 @@ function Counter() {
 You can add a filename or a title to your code blocks by adding a `filename`
 attribute:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```js filename="example.js"
 console.log('hello, world')
 ```
@@ -205,7 +205,7 @@ console.log('hello, world')
 
 You can highlight ANSI escape codes:
 
-````md copy=false filename="Markdown"
+````mdx copy=false filename="Markdown"
 ```ansi
 [0m [0;32m✓[0m [0;2msrc/[0mindex[0;2m.test.ts (1)[0m
   [0;2m Test Files [0m [0;1;32m1 passed[0;98m (1)[0m
