@@ -1,3 +1,6 @@
+import { Cards } from 'nextra/components'
+import { useState } from 'react'
+
 # Markdown
 
 ## MDX
@@ -29,10 +32,7 @@ export function Counter({ children }) {
 
 Generates:
 
-import { StarsIcon } from '@components/icons'
-import { Shadow } from '@components/utils/shadow'
-import { Cards } from 'nextra/components'
-import { useState } from 'react'
+
 
 export function Counter({ children }) {
   const [count, setCount] = useState(0)
@@ -45,10 +45,8 @@ export function Counter({ children }) {
 }
 
 <div className="mt-6 rounded-xl border border-gray-200 p-4 dark:border-gray-900">
-  <Shadow mode="open">
-    <h2>Hello MDX</h2>
-    <Counter>**Clicks**: </Counter>
-  </Shadow>
+  <h2>Hello MDX</h2>
+  <Counter>**Clicks**: </Counter>
 </div>
 
 Besides basic MDX, Nextra also has some advanced Markdown features built-in.

@@ -1,25 +1,3 @@
-
-// const generateFooterLinkText = (text) => {
-//   return (
-//     <>
-//       {text}
-//       <Vercel />
-//     </>
-//   )
-// }
-
-// export interface i18nConfigType {
-//   [language: string]: {
-//     title: string;
-//     editText: string;
-//     footerLinkText: string;
-//     footerLinkElement: JSX.Element;
-//     locale: 'en' | 'es' | 'ru' | 'zh';
-//     direction?: 'rtl' | 'ltr';
-//     name: string
-//   }
-// }
-
 // Unfortunately making this a .ts file is not easily doable atm
 // TODO: revisit this if time allows
 export const i18nConfig = Object.freeze({
