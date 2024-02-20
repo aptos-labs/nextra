@@ -112,22 +112,62 @@ You can highlight specific substrings of code by adding a `//` attribute to the
 code block:
 
 ````mdx copy=false filename="Markdown"
-```js /useState/
-import { useState } from 'react'
+```rust filename="lib.rs" /Person/
+// Define a struct named `Person`
+struct Person {
+    name: String,
+    age: u8,
+}
 
-function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+// Implement methods for the `Person` struct
+impl Person {
+    // Constructor method to create a new `Person`
+    fn new(name: String, age: u8) -> Person {
+        Person { name, age }
+    }
+
+    // Method for the `Person` to greet
+    fn greet(&self) {
+        println!("Hello, my name is {} and I am {} years old.", self.name, self.age);
+    }
+}
+
+fn main() {
+    // Create a new `Person` instance
+    let person = Person::new("Alice".to_string(), 30);
+
+    // Call the `greet` method
+    person.greet();
 }
 ```
 ````
 
-```js copy=false /useState/
-import { useState } from 'react'
+```rust filename="lib.rs" /Person/
+// Define a struct named `Person`
+struct Person {
+    name: String,
+    age: u8,
+}
 
-function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+// Implement methods for the `Person` struct
+impl Person {
+    // Constructor method to create a new `Person`
+    fn new(name: String, age: u8) -> Person {
+        Person { name, age }
+    }
+
+    // Method for the `Person` to greet
+    fn greet(&self) {
+        println!("Hello, my name is {} and I am {} years old.", self.name, self.age);
+    }
+}
+
+fn main() {
+    // Create a new `Person` instance
+    let person = Person::new("Alice".to_string(), 30);
+
+    // Call the `greet` method
+    person.greet();
 }
 ```
 

@@ -10,15 +10,6 @@ export const i18nConfig = Object.freeze({
     footerLinkText: 'https://vercel.com/?utm_source=swr',
     footerLinkElement: undefined,
   },
-  es: {
-    locale: 'es',
-    name: 'Español RTL',
-    direction: 'rtl',
-    title: 'Biblioteca React Hooks para la obtención de datos',
-    editText: 'Edite esta página en GitHub',
-    footerLinkText: 'https://vercel.com/?utm_source=swr_es-es',
-    footerLinkElement: undefined,
-  },
   ru: {
     locale: 'ru',
     name: 'Русский',

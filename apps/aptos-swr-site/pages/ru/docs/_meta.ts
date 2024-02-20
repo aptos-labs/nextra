@@ -1,3 +1,3 @@
 export default {
-  'getting-started': 'Начало работы',
+  index: 'Быстрый старт',
 }
