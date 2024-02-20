@@ -15,6 +15,7 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
+    "@aptos-labs/aptos-docs-config": "workspace:*",
     "@vercel/og": "^0.5.0",
     "focus-visible": "^5.1.0",
     "intersection-observer": "^0.10.0",
