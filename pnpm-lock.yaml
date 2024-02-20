@@ -95,6 +95,9 @@ importers:
       '@aptos-labs/aptos-docs-config':
         specifier: workspace:*
         version: link:../../packages/aptos-docs-config
+      '@next/third-parties':
+        specifier: ^14.1.0
+        version: 14.1.0(next@13.5.6)(react@18.2.0)
       '@vercel/og':
         specifier: ^0.5.0
         version: 0.5.0
@@ -115,7 +118,7 @@ importers:
         version: file:packages/nextra(@types/react@18.2.55)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       nextra-theme-docs:
         specifier: workspace:*
-        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0)
+        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -203,7 +206,7 @@ importers:
         version: file:packages/nextra(@types/react@18.2.55)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       nextra-theme-blog:
         specifier: workspace:*
-        version: file:packages/nextra-theme-blog(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0)
+        version: file:packages/nextra-theme-blog(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -226,7 +229,7 @@ importers:
         version: file:packages/nextra(@types/react@18.2.55)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       nextra-theme-docs:
         specifier: workspace:*
-        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0)
+        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -258,7 +261,7 @@ importers:
         version: file:packages/nextra(@types/react@18.2.55)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       nextra-theme-docs:
         specifier: workspace:*
-        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0)
+        version: file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -4934,6 +4937,17 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@next/third-parties@14.1.0(next@13.5.6)(react@18.2.0):
+    resolution: {integrity: sha512-f55SdvQ1WWxi4mb5QqtYQh5wRzbm1XaeP7s39DPn4ks3re+n9VlFccbMxBRHqkE62zAyIKmvkUB2cByT/gugGA==}
+    peerDependencies:
+      next: 13.5.6
+      react: ^18.2.0
+    dependencies:
+      next: 13.5.6(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      third-party-capital: 1.0.20
+    dev: false
 
   /@nicolo-ribaudo/semver-v6@6.3.3:
     resolution: {integrity: sha512-3Yc1fUTs69MG/uZbJlLSI3JISMn2UV2rg+1D/vROUqZyh3l6iYHCs7GMp+M40ZD7yOdDbYjJcU1oTJhrc+dGKg==}
@@ -18695,6 +18709,10 @@ packages:
       any-promise: 1.3.0
     dev: true
 
+  /third-party-capital@1.0.20:
+    resolution: {integrity: sha512-oB7yIimd8SuGptespDAZnNkzIz+NWaJCu2RMsbs4Wmp9zSDUM8Nhi3s2OOcqYuv3mN4hitXc8DVx+LyUmbUDiA==}
+    dev: false
+
   /through2@2.0.5:
     resolution: {integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==}
     dependencies:
@@ -20390,7 +20408,7 @@ packages:
       - typescript
     dev: false
 
-  file:packages/nextra-theme-blog(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0):
+  file:packages/nextra-theme-blog(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0):
     resolution: {directory: packages/nextra-theme-blog, type: directory}
     id: file:packages/nextra-theme-blog
     name: nextra-theme-blog
@@ -20411,7 +20429,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.17)(react-dom@18.2.0)(react@18.2.0):
+  file:packages/nextra-theme-docs(next@13.5.6)(nextra@3.0.0-alpha.19)(react-dom@18.2.0)(react@18.2.0):
     resolution: {directory: packages/nextra-theme-docs, type: directory}
     id: file:packages/nextra-theme-docs
     name: nextra-theme-docs
