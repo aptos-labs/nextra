@@ -88,9 +88,19 @@ const config: DocsThemeConfig = {
         />
         <meta name="msapplication-TileColor" content="#fff" />
         <meta httpEquiv="Content-Language" content="en" />
+
+        {/* Opengraph (OG) */}
+        <meta property="og:image" content={image} />
+        {/* Fallback OG Image */}
+        <meta property="og:image" content={image} />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
-        <meta property="og:image" content={image} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image:type" content="image/png" />
+
+        {/* Apple */}
         <meta name="apple-mobile-web-app-title" content="Aptos Docs" />
       </>
     )

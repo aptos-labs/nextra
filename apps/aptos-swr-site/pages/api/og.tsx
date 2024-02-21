@@ -3,13 +3,26 @@ import { ImageResponse } from '@vercel/og'
 import { title as docsTitle } from '@docs-config';
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'edge'
 }
 
 const font = fetch(new URL('./Inter-SemiBold.otf', import.meta.url)).then(res =>
   res.arrayBuffer()
 )
 
+export const alt = 'Aptos Docs'
+
+export const size = {
+  width: 1200,
+  height: 630,
+}
+
+export const contentType = 'image/png'
+
+/**
+ * For more details on OpenGraph configuration, see
+ * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
+ */
 export default async function (req) {
   const inter = await font
 
