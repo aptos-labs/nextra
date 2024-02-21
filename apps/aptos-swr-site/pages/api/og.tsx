@@ -3,7 +3,7 @@ import { ImageResponse } from '@vercel/og'
 import { title as docsTitle } from '@docs-config';
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'experimental-edge'
 }
 
 const font = fetch(new URL('./Inter-SemiBold.otf', import.meta.url)).then(res =>
@@ -51,7 +51,7 @@ export default async function (req) {
             letterSpacing: -1
           }}
         >
-          {docsTitle} Docs
+          {docsTitle}
         </p>
         <h1
           style={{
