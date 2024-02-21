@@ -3,4 +3,5 @@ export default {
   'organize-files-advanced': 'Organize Files (Advanced)',
   'maintenance': 'Maintenance',
   'deployment': 'Deployment',
+  'analytics': 'Analytics',
 }

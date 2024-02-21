@@ -1,6 +1,10 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 import '../styles.css'
 
+export const config = {
+  runtime: 'edge',
+}
+
 /**
  * Learn more about using Google Analytics 4 with the 
  * Next.js pages router here

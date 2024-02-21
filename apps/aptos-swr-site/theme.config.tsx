@@ -54,8 +54,7 @@ const config: DocsThemeConfig = {
       config.frontMatter.description ||
       'Docs for Aptos'
     const image =
-      config.frontMatter.image ||
-      'https://assets.vercel.com/image/upload/v1572282926/swr/twitter-card.jpg'
+      config.frontMatter.image || '/api/og'
     const title = `${config.title} | Aptos Docs (${locale})`
     return (
       <>
