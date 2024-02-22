@@ -22,7 +22,10 @@ const config: DocsThemeConfig = {
     }
   },
   feedback: {
-    content: 'Question? Give us feedback →',
+    content: function useFeedback() {
+      const { locale } = useRouter();
+      return i18nConfig[locale!].feedbackText;
+    },
     labels: 'feedback',
     useLink() {
       return docsConfig.githubNewIssueUrl
@@ -43,14 +46,26 @@ const config: DocsThemeConfig = {
       )
     }
   },
-  head: function useHead() {
-    const config = useConfig<{ description?: string; image?: string }>()
+  gitTimestamp: function GitTimestamp({ timestamp }) {
     const { locale } = useRouter()
-    const description =
-      config.frontMatter.description ||
-      docsConfig.defaultDescription
-    const image =
-      config.frontMatter.image || '/api/og'
+    return (
+      <>
+        {i18nConfig[locale!].lastUpdatedOn + ' '}
+        <time dateTime={timestamp.toISOString()}>
+          {timestamp.toLocaleDateString(locale, {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
+        </time>
+      </>
+    )
+  },
+  head: function useHead() {
+    const { locale } = useRouter()
+    const config = useConfig<{ description?: string; image?: string }>()
+    const description = config.frontMatter.description || docsConfig.defaultDescription
+    const image = config.frontMatter.image || '/api/og'
     const title = `${config.title} | ${docsConfig.defaultTitle} (${locale})`
     return (
       <>
@@ -87,8 +102,8 @@ const config: DocsThemeConfig = {
 
         {/* Opengraph (OG) */}
         <meta property="og:image" content={image} />
+        <meta property="og:image" content="/og/fallback-1200x630" />
         {/* Fallback OG Image */}
-        <meta property="og:image" content={image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
@@ -96,6 +111,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@vercel" />
         <meta name="twitter:image" content={image} />
+        <meta name="twitter:image" content="/og/fallback-1200x630" />
         <meta name="twitter:image:type" content="image/png" />
 
         {/* Apple */}
@@ -122,6 +138,28 @@ const config: DocsThemeConfig = {
   },
   project: {
     link: docsConfig.githubUrl
+  },
+  search: {
+    emptyResult: function useEmptyResult() {
+      const { locale } = useRouter();
+      return (
+        <span className="_block _select-none _p-8 _text-center _text-sm _text-gray-400">
+          {i18nConfig[locale!].searchEmptyText}
+        </span>
+      )
+    },
+    error: function useError() {
+      const { locale } = useRouter();
+      return i18nConfig[locale!].searchErrorText;
+    },
+    loading: function useLoading() {
+      const { locale } = useRouter()
+      return i18nConfig[locale!].searchEmptyText;
+    },
+    placeholder: function usePlaceholder() {
+      const { locale } = useRouter()
+      return i18nConfig[locale!].searchPlaceholderText;
+    }
   },
   sidebar: {
     autoCollapse: true,
