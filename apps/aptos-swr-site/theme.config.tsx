@@ -2,7 +2,7 @@
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'nextra/hooks'
-import { i18nConfig } from '@docs-config'
+import { docsConfig, i18nConfig } from '@docs-config'
 
 const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }]) => {
   return {
@@ -14,8 +14,7 @@ const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }
 
 const config: DocsThemeConfig = {
   darkMode: true,
-  docsRepositoryBase:
-    'https://github.com/aptos-labs/nextra/apps/aptos-swr-site',
+  docsRepositoryBase: docsConfig.githubDocsUrl,
   editLink: {
     content: function useText() {
       const { locale } = useRouter()
@@ -26,10 +25,7 @@ const config: DocsThemeConfig = {
     content: 'Question? Give us feedback →',
     labels: 'feedback',
     useLink() {
-      const config = useConfig()
-      return `https://google.com/search?q=${encodeURIComponent(
-        `Feedback for ${config.title}`
-      )}`
+      return docsConfig.githubNewIssueUrl
     }
   },
   footer: {
@@ -52,10 +48,10 @@ const config: DocsThemeConfig = {
     const { locale } = useRouter()
     const description =
       config.frontMatter.description ||
-      'Docs for Aptos'
+      docsConfig.defaultDescription
     const image =
       config.frontMatter.image || '/api/og'
-    const title = `${config.title} | Aptos Docs (${locale})`
+    const title = `${config.title} | ${docsConfig.defaultTitle} (${locale})`
     return (
       <>
         <title>{title}</title>
@@ -93,6 +89,8 @@ const config: DocsThemeConfig = {
         <meta property="og:image" content={image} />
         {/* Fallback OG Image */}
         <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -101,7 +99,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:image:type" content="image/png" />
 
         {/* Apple */}
-        <meta name="apple-mobile-web-app-title" content="Aptos Docs" />
+        <meta name="apple-mobile-web-app-title" content={docsConfig.defaultTitle} />
       </>
     )
   },
@@ -112,9 +110,9 @@ const config: DocsThemeConfig = {
       <>
         <span
           className="select-none font-extrabold ltr:ml-2 rtl:mr-2"
-          title={`Aptos Docs: ${i18nConfig[locale!].title || ''}`}
+          title={`${docsConfig.defaultTitle}: ${i18nConfig[locale!].title || ''}`}
         >
-          Aptos Docs
+          {docsConfig.defaultTitle}
         </span>
       </>
     )
@@ -123,7 +121,7 @@ const config: DocsThemeConfig = {
     defaultTheme: 'light'
   },
   project: {
-    link: 'https://github.com/aptos-labs/nextra'
+    link: docsConfig.githubUrl
   },
   sidebar: {
     autoCollapse: true,

@@ -1,6 +1,6 @@
 /* eslint-env node */
 import { ImageResponse } from '@vercel/og'
-import { title as docsTitle } from '@docs-config';
+import { docsConfig } from '@docs-config';
 
 export const config = {
   runtime: 'edge'
@@ -32,7 +32,7 @@ export default async function (req) {
   const hasTitle = searchParams.has('title')
   const title = hasTitle
     ? searchParams.get('title')?.slice(0, 100)
-    : 'Aptos Documentation'
+    : docsConfig.defaultTitle
 
   return new ImageResponse(
     (
@@ -64,7 +64,7 @@ export default async function (req) {
             letterSpacing: -1
           }}
         >
-          {docsTitle}
+          {docsConfig.defaultTitle}
         </p>
         <h1
           style={{

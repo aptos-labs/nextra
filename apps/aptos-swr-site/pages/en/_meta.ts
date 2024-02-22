@@ -8,20 +8,6 @@ export default {
     type: 'page',
     title: 'Docs'
   },
-  about: {
-    type: 'menu',
-    title: 'About',
-    items: {
-      contributors: {
-        title: 'Contributors',
-        href: 'https://github.com/aptos-labs/nextra/contributors',
-        newWindow: true
-      },
-      team: {
-        title: 'Team'
-      },
-    }
-  },
   nextra_link: {
     type: 'page',
     title: 'Nextra ↗',

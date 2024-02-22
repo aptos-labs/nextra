@@ -21,11 +21,17 @@ export const i18nConfig = Object.freeze({
   }
 })
 
-
 /**
  * These variables are used for things like 
  * - og.tsx
  */
 
-// Docs Title
-export const title = 'SDK Docs'
+export const docsConfig = Object.freeze({
+  i18nConfig,
+  defaultTitle: 'Aptos Docs',
+  defaultDescription: 'Docs for Aptos',
+  githubUrl: 'https://github.com/aptos-labs/nextra',
+  githubDocsUrl: 'https://github.com/aptos-labs/nextra/apps/aptos-swr-site',
+  githubNewIssueUrl: 'https://github.com/aptos-labs/nextra/issues/new',
+  googleAnalyticsId: 'G-LLF79THJN0'
+})

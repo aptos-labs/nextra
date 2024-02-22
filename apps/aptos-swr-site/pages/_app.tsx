@@ -1,4 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { docsConfig } from '@docs-config'
 import '../styles.css'
 
 export const config = {
@@ -13,7 +14,7 @@ export const config = {
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <GoogleAnalytics gaId="G-LLF79THJN0" />
+      <GoogleAnalytics gaId={docsConfig.googleAnalyticsId} />
       <Component {...pageProps} />
     </>
   )
