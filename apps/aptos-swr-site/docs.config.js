@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // Unfortunately making this a .ts file is not easily doable atm
 // TODO: revisit this if time allows
 export const i18nConfig = Object.freeze({
@@ -45,5 +46,6 @@ export const docsConfig = Object.freeze({
   githubUrl: 'https://github.com/aptos-labs/nextra',
   githubDocsUrl: 'https://github.com/aptos-labs/nextra/apps/aptos-swr-site',
   githubNewIssueUrl: 'https://github.com/aptos-labs/nextra/issues/new',
-  googleAnalyticsId: 'G-LLF79THJN0'
+  googleAnalyticsId: 'G-LLF79THJN0',
+  origin: process.env.NEXT_PUBLIC_ORIGIN
 })

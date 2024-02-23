@@ -4,6 +4,12 @@ import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'nextra/hooks'
 import { docsConfig, i18nConfig } from '@docs-config'
 
+interface FrontmatterConfig { 
+  description?: string; 
+  image?: string; 
+  title?: string 
+}
+
 const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }]) => {
   return {
     direction: (direction as 'ltr' | 'rtl' | undefined) || undefined,
@@ -11,6 +17,12 @@ const i18nLocales = Object.entries(i18nConfig).map(([locale, { direction, name }
     name,
   }
 })
+
+function isFullUrl(url: string): boolean {
+  // This regex checks for strings that start with a scheme like http:// or https://
+  const pattern = /^[a-zA-Z][a-zA-Z\d+\-.]*:\/\//;
+  return pattern.test(url);
+}
 
 const config: DocsThemeConfig = {
   darkMode: true,
@@ -62,11 +74,24 @@ const config: DocsThemeConfig = {
     )
   },
   head: function useHead() {
-    const { locale } = useRouter()
-    const config = useConfig<{ description?: string; image?: string }>()
+    const config = useConfig<FrontmatterConfig>()
+    const { locale } = useRouter();
+
+    if (!docsConfig.origin) throw new Error('Origin is not defined in docs.config.js. Ensure it is part of your .env file for your project')
+    
     const description = config.frontMatter.description || docsConfig.defaultDescription
-    const image = config.frontMatter.image || '/api/og'
-    const title = `${config.title} | ${docsConfig.defaultTitle} (${locale})`
+    let image: string;
+    const url = new URL(docsConfig.origin)
+    const imagePath = config.frontMatter.image || '/api/og.png';
+
+    if (config.frontMatter.image && isFullUrl(imagePath)) {
+      image = imagePath; // Use the full URL if it is indeed a full URL
+    } else {
+      url.pathname = imagePath; // Modify pathname to the imagePath or default
+      image = url.toString(); // Update image to the full URL constructed from url
+    }
+
+    const title = `${config.frontMatter.title || config.title} | ${docsConfig.defaultTitle} (${locale})`
     return (
       <>
         <title>{title}</title>
@@ -100,19 +125,19 @@ const config: DocsThemeConfig = {
         <meta name="msapplication-TileColor" content="#fff" />
         <meta httpEquiv="Content-Language" content="en" />
 
-        {/* Opengraph (OG) */}
+        {/* OpenGraph Copied from vercel.com */}
+        {/* Had a lot of issues with twitter cards rendering, lots of trial and error, you have been warned :) */}
         <meta property="og:image" content={image} />
-        <meta property="og:image" content="/og/fallback-1200x630" />
-        {/* Fallback OG Image */}
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter */}
+        <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image:title" content={title + 'OG Image'} />
         <meta name="twitter:image" content={image} />
-        <meta name="twitter:image" content="/og/fallback-1200x630" />
-        <meta name="twitter:image:type" content="image/png" />
+        <meta name="twitter:image:width" content="2400" />
+        <meta name="twitter:image:height" content="1256" />
+        {/* <meta name="twitter:image:file_name" content="og-dark.png" /> */}
+        <meta name="twitter:image:content_type" content="image/png" />
 
         {/* Apple */}
         <meta name="apple-mobile-web-app-title" content={docsConfig.defaultTitle} />

@@ -13,8 +13,8 @@ const font = fetch(new URL('./Inter-SemiBold.otf', import.meta.url)).then(res =>
 export const alt = 'Aptos Docs'
 
 export const size = {
-  width: 1200,
-  height: 630,
+  width: 2400,
+  height: 1256,
 }
 
 export const contentType = 'image/png'
@@ -44,7 +44,7 @@ export default async function (req) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          padding: 80,
+          padding: 160,
           backgroundColor: '#030303',
           backgroundImage:
             'radial-gradient(circle at 25px 25px, #333 2%, transparent 0%), radial-gradient(circle at 75px 75px, #333 2%, transparent 0%)',
@@ -57,10 +57,10 @@ export default async function (req) {
         <p
           style={{
             position: 'absolute',
-            bottom: 70,
-            left: 80,
+            bottom: 140,
+            left: 160,
             margin: 0,
-            fontSize: 30,
+            fontSize: 60,
             letterSpacing: -1
           }}
         >
@@ -68,7 +68,7 @@ export default async function (req) {
         </p>
         <h1
           style={{
-            fontSize: 82,
+            fontSize: 164,
             margin: '0 0 40px -2px',
             lineHeight: 1.1,
             textShadow: '0 2px 30px #000',
@@ -83,15 +83,15 @@ export default async function (req) {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: 2400,
+      height: 1256,
       fonts: [
         {
           name: 'inter',
           data: inter,
           style: 'normal'
         }
-      ]
+      ],
     }
   )
 }
