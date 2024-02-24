@@ -74,24 +74,38 @@ const config: DocsThemeConfig = {
     )
   },
   head: function useHead() {
-    const config = useConfig<FrontmatterConfig>()
+    const config = useConfig<FrontmatterConfig>();
+    const { frontMatter } = config;
     const { locale } = useRouter();
 
     if (!docsConfig.origin) throw new Error('Origin is not defined in docs.config.js. Ensure it is part of your .env file for your project')
     
-    const description = config.frontMatter.description || docsConfig.defaultDescription
-    let image: string;
-    const url = new URL(docsConfig.origin)
-    const imagePath = config.frontMatter.image || '/api/og.png';
+    const description = frontMatter.description || docsConfig.defaultDescription
 
-    if (config.frontMatter.image && isFullUrl(imagePath)) {
-      image = imagePath; // Use the full URL if it is indeed a full URL
+    /**
+     * Why this is separated:
+     * opengraph images render fine with dynamic search params
+     * twitter opengraph images must end with .png / .jpeg, and cannot have dynamic search params at the end
+     * e.g., api/og.png?title=something does not render on Twitter, but DOES render on iMessage
+     */
+    let ogImage: string;
+    let twitterImage: string;
+    const url = new URL(docsConfig.origin)
+    const imagePath = frontMatter.image || '/api/og.png';
+    const title = `${frontMatter.title || config.title} | ${docsConfig.defaultTitle} (${locale})`
+
+
+    if (frontMatter.image && isFullUrl(imagePath)) {
+      ogImage = imagePath; // Use the full URL if it is indeed a full URL
+      twitterImage = imagePath;
     } else {
       url.pathname = imagePath; // Modify pathname to the imagePath or default
-      image = url.toString(); // Update image to the full URL constructed from url
+      twitterImage = url.toString();
+
+      url.searchParams.append('title', title)
+      ogImage = url.toString();
     }
 
-    const title = `${config.frontMatter.title || config.title} | ${docsConfig.defaultTitle} (${locale})`
     return (
       <>
         <title>{title}</title>
@@ -127,13 +141,13 @@ const config: DocsThemeConfig = {
 
         {/* OpenGraph Copied from vercel.com */}
         {/* Had a lot of issues with twitter cards rendering, lots of trial and error, you have been warned :) */}
-        <meta property="og:image" content={image} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image:title" content={title + 'OG Image'} />
-        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image:title" content={title + ' OG Image'} />
+        <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:image:width" content="2400" />
         <meta name="twitter:image:height" content="1256" />
         {/* <meta name="twitter:image:file_name" content="og-dark.png" /> */}
