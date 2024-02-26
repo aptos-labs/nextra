@@ -109,6 +109,9 @@ const config: DocsThemeConfig = {
     return (
       <>
         <title>{title}</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content={title} />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta property="og:title" content={title} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
