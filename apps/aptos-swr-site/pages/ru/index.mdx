@@ -4,6 +4,7 @@ searchable: false
 ---
 
 import Features from '@components/features'
+import { PrimaryOutlineButton } from '@components/buttons/Button'
 
 {/* Обернуто в {} чтобы указать, что это JavaScript, так что mdx не поместит это в тег <p> */}
 {<h1 className="text-center font-extrabold md:text-5xl mt-8">Документация Aptos</h1>}
@@ -21,5 +22,5 @@ pnpx @aptos-labs/create-docs
 Документация Aptos основана на [Nextra](https://nextra.site/), фреймворке для документации на базе Next.js с поддержкой [MDX 3](https://mdxjs.com/blog/v3/), что позволяет вам добавлять компоненты React и HTML непосредственно в ваш Markdown.
 
 <div className="mb-20 mt-16 text-center">
-  [Начать работу](/docs)
+  <PrimaryOutlineButton href="/docs">Начать работу</PrimaryOutlineButton>
 </div>
